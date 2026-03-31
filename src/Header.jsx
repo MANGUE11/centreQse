@@ -41,16 +41,15 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div 
+          <div
             onClick={() => scrollToSection('accueil')}
-            className="cursor-pointer"
+            className="cursor-pointer flex items-center"
           >
-            <h1 className="text-2xl md:text-3xl font-bold text-primary-600">
-              Centre QSE
-            </h1>
-            <p className="text-xs text-gray-600 hidden md:block">
-              Qualité, Sécurité & Environnement
-            </p>
+            <img
+              src="/images/logo png.png"
+              alt="Centre QSE"
+              className="h-12 md:h-14 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}

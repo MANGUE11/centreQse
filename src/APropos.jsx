@@ -1,4 +1,4 @@
-import { FiArrowRight } from 'react-icons/fi';
+import { FiArrowRight, FiAward, FiBookOpen, FiBriefcase } from 'react-icons/fi';
 import Animate from './Animate';
 
 const APropos = () => {
@@ -7,57 +7,74 @@ const APropos = () => {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const badges = [
+    { icon: <FiAward className="w-4 h-4" />, label: "Ingénieur QSE" },
+    { icon: <FiBookOpen className="w-4 h-4" />, label: "ISO 9001 · 14001 · 45001" },
+    { icon: <FiBriefcase className="w-4 h-4" />, label: "3 ans d'expérience" },
+  ];
+
   return (
     <section id="apropos" className="py-24 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-10 max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-          {/* Left — image */}
+          {/* Left — photo */}
           <Animate variant="fadeLeft">
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-full h-full rounded-2xl bg-blue-600/10 border border-blue-100" />
               <img
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=900&q=80"
-                alt="Consultant QSE"
-                className="relative z-10 w-full h-[400px] sm:h-[500px] object-cover rounded-2xl shadow-xl"
+                src="/images/photo.jpeg"
+                alt="Bakary KOUROUMA — Consultant QSE"
+                className="relative z-10 w-full h-[480px] sm:h-[560px] object-cover object-top rounded-2xl shadow-xl"
               />
+              {/* Badge flottant */}
               <div className="absolute z-20 bottom-6 -right-3 sm:-right-5 bg-white border border-gray-100 shadow-lg rounded-xl px-4 sm:px-5 py-3 flex items-center gap-3">
                 <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-sm font-bold">QSE</span>
                 </div>
                 <div>
-                  <p className="text-sm font-bold text-gray-900">+15 ans d'expérience</p>
-                  <p className="text-xs text-gray-400">Expert certifié ISO</p>
+                  <p className="text-sm font-bold text-gray-900">NIANDAN GROUP</p>
+                  <p className="text-xs text-gray-400">Responsable QHSE</p>
                 </div>
               </div>
             </div>
           </Animate>
 
-          {/* Right — text */}
+          {/* Right — texte */}
           <Animate variant="fadeRight" delay="0.15s">
             <div>
               <span className="text-sm font-semibold tracking-widest text-blue-600 uppercase">À propos</span>
-              <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-900 mt-3 mb-8 leading-tight">
-                Un expert à vos côtés pour chaque étape de votre démarche QSE
+              <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-900 mt-3 mb-2 leading-tight">
+                Bakary KOUROUMA
               </h2>
+              <p className="text-blue-600 font-semibold text-lg mb-8">
+                Ingénieur QSE — Agent du Développement Communautaire
+              </p>
 
-              <div className="space-y-6 text-gray-700 text-lg leading-[1.9]">
+              {/* Badges compétences */}
+              <div className="flex flex-wrap gap-3 mb-8">
+                {badges.map((b, i) => (
+                  <span key={i} className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 text-sm font-semibold px-3 py-1.5 rounded-full">
+                    {b.icon} {b.label}
+                  </span>
+                ))}
+              </div>
+
+              <div className="space-y-5 text-gray-700 text-lg leading-[1.9]">
                 <p>
-                  Fort de plus de 15 ans d'expérience dans le domaine de la Qualité, Sécurité et
-                  Environnement, notre Centre de Consultation accompagne les entreprises de toutes
-                  tailles dans la mise en œuvre et la certification de leurs systèmes de management
-                  intégré (SMI).
+                  Diplômé en QHSE Professionnel au Maroc et en Sociologie du Développement
+                  Communautaire en Guinée, Bakary KOUROUMA est Responsable QHSE de NIANDAN GROUP
+                  depuis décembre 2025.
                 </p>
                 <p>
-                  Notre approche repose sur une méthode rigoureuse et personnalisée : nous analysons
-                  votre contexte, vos risques et vos opportunités pour co-construire avec vos équipes
-                  des solutions durables, conformes aux normes ISO 9001, ISO 14001 et ISO 45001.
+                  Consultant SST / HSE motivé et rigoureux, il dispose d'une maîtrise approfondie
+                  des référentiels ISO 9001, ISO 14001 et ISO 45001, ainsi que des outils de
+                  résolution de problèmes : QQOQCCP, SWOT, 5M, 5 Pourquoi, PDCA.
                 </p>
                 <p>
-                  Nous croyons que la conformité réglementaire n'est pas une fin en soi, mais un
-                  tremplin vers l'excellence opérationnelle. Notre engagement : vous accompagner bien
-                  au-delà de la certification, pour ancrer une culture QSE pérenne au cœur de votre
-                  organisation.
+                  Fort de trois ans d'expérience dans la mise en place de programmes QSE, il
+                  accompagne les entreprises dans leur démarche d'amélioration continue, de
+                  conformité réglementaire et de performance globale.
                 </p>
               </div>
 

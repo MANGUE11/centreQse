@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiSend, FiCheckCircle, FiFeather } from 'react-icons/fi';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -156,7 +156,7 @@ const Contact = () => {
 
               <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8">
                 <h3 className="text-xl font-bold text-gray-800 mb-4">
-                  🌱 Notre engagement environnemental
+                  <span className="flex items-center gap-2"><FiFeather className="w-5 h-5 text-green-600" /> Notre engagement environnemental</span>
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
                   Ensemble, construisons un avenir plus sûr, plus qualitatif et plus respectueux 
