@@ -123,9 +123,22 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} Centre QSE. Tous droits réservés.
-            </p>
+            <div className="text-center md:text-left">
+              <p className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} Centre QSE. Tous droits réservés.
+              </p>
+              <p className="text-gray-500 text-xs mt-1">
+                Développé par{' '}
+                <a
+                  href="https://my-porfolio-lilac-theta.vercel.app/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-300"
+                >
+                  MA-SY
+                </a>
+              </p>
+            </div>
             <div className="flex gap-6 text-sm">
               <button className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
                 Mentions légales
