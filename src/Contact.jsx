@@ -11,6 +11,7 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
@@ -49,25 +50,32 @@ const Contact = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    if (validateForm()) {
-      // Simulate form submission
-      console.log('Form submitted:', formData);
-      setIsSubmitted(true);
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        setFormData({
-          prenom: '',
-          nom: '',
-          telephone: '',
-          email: '',
-          message: ''
-        });
-        setIsSubmitted(false);
-      }, 3000);
+
+    if (!validateForm()) return;
+
+    setIsLoading(true);
+    try {
+      const res = await fetch('https://formspree.io/f/mkopbaok', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          prenom: formData.prenom,
+          nom: formData.nom,
+          telephone: formData.telephone,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      if (res.ok) {
+        setIsSubmitted(true);
+        setFormData({ prenom: '', nom: '', telephone: '', email: '', message: '' });
+        setTimeout(() => setIsSubmitted(false), 4000);
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -290,10 +298,11 @@ const Contact = () => {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full btn-primary flex items-center justify-center gap-2 group"
+                      disabled={isLoading}
+                      className="w-full btn-primary flex items-center justify-center gap-2 group disabled:opacity-60 disabled:cursor-not-allowed"
                     >
-                      <span>Envoyer le message</span>
-                      <FiSend className="group-hover:translate-x-1 transition-transform" />
+                      <span>{isLoading ? 'Envoi en cours...' : 'Envoyer le message'}</span>
+                      <FiSend className={`transition-transform ${isLoading ? 'animate-spin' : 'group-hover:translate-x-1'}`} />
                     </button>
                   </form>
                 )}
