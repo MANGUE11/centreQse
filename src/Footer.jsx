@@ -37,20 +37,26 @@ const Footer = () => {
               Nous transformons les défis réglementaires en opportunités stratégiques.
             </p>
             <div className="flex gap-3">
-              <a 
-                href="#" 
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <FiLinkedin className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <FiFacebook className="w-5 h-5" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <FiTwitter className="w-5 h-5" />
@@ -121,15 +127,15 @@ const Footer = () => {
               © {new Date().getFullYear()} Centre QSE. Tous droits réservés.
             </p>
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+              <button className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
                 Mentions légales
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+              </button>
+              <button className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
                 Politique de confidentialité
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
+              </button>
+              <button className="text-gray-400 hover:text-primary-400 transition-colors duration-300">
                 CGU
-              </a>
+              </button>
             </div>
           </div>
         </div>
