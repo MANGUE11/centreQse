@@ -1,4 +1,4 @@
-import { FiArrowRight, FiAward, FiBookOpen, FiBriefcase } from 'react-icons/fi';
+import { FiArrowRight, FiAward, FiBookOpen, FiBriefcase, FiPhone, FiMail } from 'react-icons/fi';
 import Animate from './Animate';
 
 const APropos = () => {
@@ -78,9 +78,27 @@ const APropos = () => {
                 </p>
               </div>
 
+              {/* Coordonnées */}
+              <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <a
+                  href="tel:+224664934035"
+                  className="inline-flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base font-medium"
+                >
+                  <FiPhone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  +224 664 93 40 35
+                </a>
+                <a
+                  href="mailto:kourouma.aboubakr@gmail.com"
+                  className="inline-flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors duration-300 text-base font-medium"
+                >
+                  <FiMail className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                  kourouma.aboubakr@gmail.com
+                </a>
+              </div>
+
               <button
                 onClick={scrollToContact}
-                className="mt-10 inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-7 py-4 rounded-xl text-lg hover:bg-blue-700 transition-colors duration-300 group"
+                className="mt-8 inline-flex items-center gap-2 bg-blue-600 text-white font-semibold px-7 py-4 rounded-xl text-lg hover:bg-blue-700 transition-colors duration-300 group"
               >
                 Nous contacter
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
