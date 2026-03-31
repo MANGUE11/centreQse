@@ -1,4 +1,4 @@
-import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiFacebook, FiTwitter } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiLinkedin, FiFacebook } from 'react-icons/fi';
 
 const Footer = () => {
   const scrollToSection = (sectionId) => {
@@ -37,7 +37,7 @@ const Footer = () => {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/bakary-kourouma-99a0621b9"
                 target="_blank"
                 rel="noreferrer"
                 className="w-10 h-10 bg-white/10 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
@@ -51,14 +51,6 @@ const Footer = () => {
                 className="w-10 h-10 bg-white/10 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
               >
                 <FiFacebook className="w-5 h-5" />
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer"
-                className="w-10 h-10 bg-white/10 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors duration-300"
-              >
-                <FiTwitter className="w-5 h-5" />
               </a>
             </div>
           </div>
