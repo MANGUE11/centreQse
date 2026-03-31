@@ -83,8 +83,8 @@ const Contact = () => {
     {
       icon: <FiPhone className="w-6 h-6" />,
       title: "Téléphone",
-      value: "+224 664 93 40 35",
-      link: "tel:+224664934035"
+      value: "+224 625 050 708",
+      link: "tel:+224625050708"
     },
     {
       icon: <FiMail className="w-6 h-6" />,

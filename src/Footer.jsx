@@ -98,11 +98,11 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Contact</h4>
             <div className="space-y-3">
               <a
-                href="tel:+224664934035"
+                href="tel:+224625050708"
                 className="flex items-start gap-3 text-gray-300 hover:text-primary-400 transition-colors duration-300"
               >
                 <FiPhone className="w-5 h-5 mt-1 flex-shrink-0" />
-                <span>+224 664 93 40 35</span>
+                <span>+224 625 050 708</span>
               </a>
               <a
                 href="mailto:kourouma.aboubakr@gmail.com"
