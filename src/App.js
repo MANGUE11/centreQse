@@ -1,10 +1,9 @@
-import React from 'react';
 import Header from './Header';
 import Hero from './Hero';
+import APropos from './APropos';
 import ImportanceQSE from './ImportanceQSE';
 import NormesISO from './NormesISO';
 import Services from './Services';
-import Temoignage from './Temoignage';
 import Contact from './Contact';
 import Footer from './Footer';
 
@@ -14,10 +13,10 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <APropos />
         <ImportanceQSE />
         <NormesISO />
         <Services />
-        <Temoignage />
         <Contact />
       </main>
       <Footer />

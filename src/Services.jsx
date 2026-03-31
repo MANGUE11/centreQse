@@ -1,37 +1,42 @@
-import React from 'react';
-import { FiSearch, FiClipboard, FiUsers, FiFileText, FiCheckCircle } from 'react-icons/fi';
+import { FiSearch, FiClipboard, FiUsers, FiFileText, FiCheckCircle, FiZap, FiFeather, FiShield } from 'react-icons/fi';
+import Animate from './Animate';
 
 const Services = () => {
   const services = [
     {
-      icon: <FiSearch className="w-8 h-8" />,
+      icon: <FiSearch className="w-6 h-6" />,
       title: "Diagnostic Initial",
       description: "Évaluation personnalisée de votre situation actuelle et de vos besoins spécifiques en QSE.",
-      color: "from-blue-500 to-blue-600"
+      accent: "#2563EB",
+      light: "#EFF6FF",
     },
     {
-      icon: <FiClipboard className="w-8 h-8" />,
+      icon: <FiClipboard className="w-6 h-6" />,
       title: "Plan d'Action",
       description: "Élaboration d'un plan clair et adapté, avec des objectifs mesurables pour votre organisation.",
-      color: "from-purple-500 to-purple-600"
+      accent: "#7C3AED",
+      light: "#F5F3FF",
     },
     {
-      icon: <FiUsers className="w-8 h-8" />,
+      icon: <FiUsers className="w-6 h-6" />,
       title: "Formation et Sensibilisation",
       description: "Montée en compétences de vos équipes aux bonnes pratiques et aux exigences QSE.",
-      color: "from-green-500 to-green-600"
+      accent: "#16A34A",
+      light: "#F0FDF4",
     },
     {
-      icon: <FiFileText className="w-8 h-8" />,
+      icon: <FiFileText className="w-6 h-6" />,
       title: "Assistance Documentaire",
       description: "Aide à la rédaction des procédures et à la mise en place des outils de suivi.",
-      color: "from-orange-500 to-orange-600"
+      accent: "#EA580C",
+      light: "#FFF7ED",
     },
     {
-      icon: <FiCheckCircle className="w-8 h-8" />,
+      icon: <FiCheckCircle className="w-6 h-6" />,
       title: "Préparation à la Certification",
       description: "Accompagnement complet pour l'audit et l'obtention de vos certifications QSE.",
-      color: "from-teal-500 to-teal-600"
+      accent: "#0891B2",
+      light: "#ECFEFF",
     }
   ];
 
@@ -39,149 +44,194 @@ const Services = () => {
     {
       title: "Expertise reconnue",
       description: "Une maîtrise approfondie des normes ISO et de la gestion intégrée QSE.",
-      icon: "🎓"
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&q=80",
+      tag: "Savoir-faire",
+      accent: "#2563EB"
     },
     {
       title: "Approche personnalisée",
       description: "Des solutions pragmatiques et adaptées aux besoins de toutes les tailles d'entreprises.",
-      icon: "🎯"
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=80",
+      tag: "Sur-mesure",
+      accent: "#7C3AED"
     },
     {
       title: "Outils numériques innovants",
       description: "Pour un suivi efficace, transparent et une gestion optimisée de vos projets QSE.",
-      icon: "💻"
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80",
+      tag: "Innovation",
+      accent: "#0891B2"
     },
     {
       title: "Accompagnement durable",
       description: "Vers la certification et l'amélioration continue, pour un impact à long terme.",
-      icon: "🌱"
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=700&q=80",
+      tag: "Long terme",
+      accent: "#16A34A"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        {/* Section Title */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="section-title">
-            Notre offre : Accompagnement complet pour la mise en œuvre QSE
-          </h2>
-          <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
-            Un parcours structuré pour transformer votre organisation
-          </p>
-        </div>
+    <section id="services" className="py-24 bg-gray-950">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-10 max-w-7xl">
 
-        {/* Services Timeline */}
-        <div className="max-w-4xl mx-auto mb-20">
-          <div className="space-y-8">
-            {services.map((service, index) => (
-              <div 
-                key={index}
-                className="flex flex-col md:flex-row gap-6 items-start animate-slide-up"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Step Number */}
-                <div className="flex-shrink-0">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-full flex items-center justify-center text-white shadow-lg`}>
-                    {service.icon}
-                  </div>
-                </div>
+        {/* Header */}
+        <Animate variant="fadeUp">
+          <div className="mb-20">
+            <span className="text-sm font-semibold tracking-widest text-blue-400 uppercase">Notre offre</span>
+            <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-white mt-3 mb-4 leading-tight">
+              Accompagnement complet<br className="hidden sm:block" /> pour la mise en œuvre QSE
+            </h2>
+            <p className="text-gray-300 text-xl max-w-2xl">
+              Un parcours structuré pour transformer votre organisation
+            </p>
+          </div>
+        </Animate>
 
-                {/* Content */}
-                <div className="flex-grow bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">
-                      {index + 1}
-                    </div>
-                    <div className="flex-grow">
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">
-                        {service.title}
-                      </h3>
-                      <p className="text-gray-600 leading-relaxed">
-                        {service.description}
-                      </p>
-                    </div>
-                  </div>
+        {/* Services — responsive grid */}
+        <Animate variant="fadeUp" delay="0.1s">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-gray-800 rounded-2xl overflow-hidden mb-24">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group bg-gray-950 p-8 xl:p-10 flex flex-col gap-5 hover:bg-gray-900 transition-colors duration-300 cursor-default"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-sm font-mono text-gray-500">0{index + 1}</span>
+                <div
+                  className="w-11 h-11 rounded-lg flex items-center justify-center"
+                  style={{ backgroundColor: service.light, color: service.accent }}
+                >
+                  {service.icon}
                 </div>
               </div>
-            ))}
-          </div>
+
+              <h3 className="text-white font-semibold text-lg leading-snug">
+                {service.title}
+              </h3>
+
+              <p className="text-gray-300 text-base leading-[1.9] flex-grow">
+                {service.description}
+              </p>
+
+              <div
+                className="h-px w-8 group-hover:w-full transition-all duration-500 rounded-full"
+                style={{ backgroundColor: service.accent }}
+              />
+            </div>
+          ))}
         </div>
+        </Animate>
 
         {/* Pourquoi nous choisir */}
-        <div className="bg-gradient-to-br from-primary-50 to-blue-100 rounded-2xl p-8 md:p-12">
-          <h3 className="text-3xl font-bold text-gray-800 mb-12 text-center">
-            Pourquoi choisir notre Centre de Consultation QSE ?
-          </h3>
+        <div className="pb-20">
+          <Animate variant="fadeUp">
+            <div className="mb-14">
+              <span className="text-sm font-semibold tracking-widest text-blue-400 uppercase">Nos atouts</span>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white mt-3">
+                Pourquoi choisir notre Centre de Consultation QSE ?
+              </h3>
+            </div>
+          </Animate>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8">
             {avantages.map((avantage, index) => (
-              <div 
+              <Animate key={index} variant="fadeUp" delay={`${index * 0.1}s`}>
+              <div
                 key={index}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:-translate-y-1"
+                className="group bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-gray-600 hover:shadow-2xl transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl flex-shrink-0">
-                    {avantage.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-gray-800 mb-2">
-                      {avantage.title}
-                    </h4>
-                    <p className="text-gray-600 leading-relaxed">
-                      {avantage.description}
-                    </p>
-                  </div>
+                <div className="relative h-52 overflow-hidden">
+                  <img
+                    src={avantage.image}
+                    alt={avantage.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <span
+                    className="absolute top-4 left-4 text-sm font-semibold px-3 py-1 rounded-full text-white"
+                    style={{ backgroundColor: avantage.accent }}
+                  >
+                    {avantage.tag}
+                  </span>
+                </div>
+
+                <div className="p-6">
+                  <h4 className="text-lg font-bold text-white mb-3">{avantage.title}</h4>
+                  <p className="text-base text-gray-200 leading-[1.9]">{avantage.description}</p>
+                  <div
+                    className="mt-5 h-0.5 w-8 rounded-full group-hover:w-full transition-all duration-500"
+                    style={{ backgroundColor: avantage.accent }}
+                  />
                 </div>
               </div>
+              </Animate>
             ))}
           </div>
         </div>
 
-        {/* Écoconception Section */}
-        <div className="mt-16 max-w-5xl mx-auto">
-          <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-8 md:p-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
-                  L'écoconception numérique au service de votre site QSE
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  Nous appliquons les principes du Référentiel Général d'Écoconception de Services 
-                  Numériques (RGESN) pour créer un site web QSE performant, responsable et respectueux 
-                  de l'environnement.
-                </p>
-                <p className="text-gray-600 leading-relaxed">
-                  En réduisant l'empreinte carbone numérique, nous garantissons une expérience 
-                  utilisateur optimale et valorisons votre engagement environnemental auprès de 
-                  toutes vos parties prenantes.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-full max-w-sm bg-white rounded-xl p-6 shadow-xl">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
-                        ✓
-                      </div>
-                      <span className="text-gray-700 font-medium">Performance optimale</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
-                        ✓
-                      </div>
-                      <span className="text-gray-700 font-medium">Empreinte carbone réduite</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
-                        ✓
-                      </div>
-                      <span className="text-gray-700 font-medium">Conformité RGESN</span>
-                    </div>
+      </div>
+
+      {/* Écoconception — full-width parallax */}
+      <div
+        className="relative w-full mt-8 py-24 lg:py-32 overflow-hidden"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&q=80')",
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60" />
+
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-10 max-w-7xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            <Animate variant="fadeLeft">
+            <div>
+              <span className="text-sm font-semibold tracking-widest text-green-400 uppercase">Responsabilité numérique</span>
+              <h3 className="text-3xl sm:text-4xl font-bold text-white mt-3 mb-8 leading-tight">
+                L'écoconception numérique au service de votre site QSE
+              </h3>
+              <p className="text-gray-100 text-lg leading-[1.9] mb-6">
+                Nous appliquons les principes du Référentiel Général d'Écoconception de Services
+                Numériques (RGESN) pour créer un site web QSE performant, responsable et respectueux
+                de l'environnement.
+              </p>
+              <p className="text-gray-100 text-lg leading-[1.9]">
+                En réduisant l'empreinte carbone numérique, nous garantissons une expérience
+                utilisateur optimale et valorisons votre engagement environnemental auprès de
+                toutes vos parties prenantes.
+              </p>
+            </div>
+            </Animate>
+
+            <Animate variant="fadeRight" delay="0.15s">
+            <div className="flex flex-col gap-5">
+              {[
+                { label: "Performance optimale",      desc: "Temps de chargement réduits, expérience fluide sur tous les appareils.", icon: <FiZap className="w-6 h-6" />,    color: "#FACC15" },
+                { label: "Empreinte carbone réduite", desc: "Architecture légère et hébergement vert pour minimiser l'impact CO₂.",   icon: <FiFeather className="w-6 h-6" />, color: "#4ADE80" },
+                { label: "Conformité RGESN",          desc: "Respect du Référentiel Général d'Écoconception de Services Numériques.", icon: <FiShield className="w-6 h-6" />, color: "#60A5FA" }
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl px-6 py-5 hover:bg-white/20 transition-all duration-300"
+                >
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5"
+                    style={{ backgroundColor: `${item.color}22`, color: item.color }}
+                  >
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="text-white font-semibold text-lg">{item.label}</p>
+                    <p className="text-gray-100 text-base mt-1 leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
+            </Animate>
+
           </div>
         </div>
       </div>

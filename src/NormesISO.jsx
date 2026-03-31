@@ -1,166 +1,132 @@
-import React from 'react';
 import { FiAward, FiHeart } from 'react-icons/fi';
 import { IoLeafOutline } from 'react-icons/io5';
+import Animate from './Animate';
 
 const NormesISO = () => {
   const normes = [
     {
-      icon: <FiAward className="w-10 h-10" />,
+      icon: <FiAward className="w-6 h-6" />,
       title: "ISO 9001 : 2015",
       subtitle: "Management de la qualité",
       description: "Centré sur la satisfaction client et l'amélioration continue des processus.",
-      color: "from-blue-500 to-blue-600",
-      bgColor: "from-blue-50 to-blue-100"
+      accent: "#2563EB", light: "#EFF6FF", tag: "Qualité"
     },
     {
-      icon: <IoLeafOutline className="w-10 h-10" />,
+      icon: <IoLeafOutline className="w-6 h-6" />,
       title: "ISO 14001 : 2015",
       subtitle: "Management environnemental",
       description: "Pour réduire l'impact écologique et assurer le respect de la réglementation.",
-      color: "from-green-500 to-green-600",
-      bgColor: "from-green-50 to-green-100"
+      accent: "#16A34A", light: "#F0FDF4", tag: "Environnement"
     },
     {
-      icon: <FiHeart className="w-10 h-10" />,
+      icon: <FiHeart className="w-6 h-6" />,
       title: "ISO 45001 : 2018",
       subtitle: "Santé et sécurité au travail",
       description: "Pour protéger les collaborateurs et prévenir les risques professionnels.",
-      color: "from-red-500 to-red-600",
-      bgColor: "from-red-50 to-red-100"
+      accent: "#DC2626", light: "#FEF2F2", tag: "Sécurité"
     }
   ];
 
   return (
-    <section id="normes" className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="container mx-auto px-4">
-        {/* Section Title */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="section-title">
-            Les trois piliers fondamentaux du QSE
-          </h2>
-          <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">
-            ISO 9001, ISO 14001 et ISO 45001
-          </p>
-        </div>
+    <section id="normes" className="py-24 bg-white">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-10 max-w-7xl">
 
-        {/* Normes Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+        <Animate variant="fadeUp">
+          <div className="mb-16">
+            <span className="text-sm font-semibold tracking-widest text-blue-600 uppercase">Référentiels</span>
+            <h2 className="text-3xl sm:text-4xl xl:text-5xl font-bold text-gray-900 mt-3 mb-4 leading-tight">
+              Les trois piliers fondamentaux du QSE
+            </h2>
+            <p className="text-xl text-gray-500">ISO 9001, ISO 14001 et ISO 45001</p>
+          </div>
+        </Animate>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {normes.map((norme, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:transform hover:-translate-y-2 animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className={`h-3 bg-gradient-to-r ${norme.color}`}></div>
-              
-              <div className="p-8">
-                <div className={`w-20 h-20 bg-gradient-to-br ${norme.color} rounded-full flex items-center justify-center text-white mb-6 mx-auto shadow-lg`}>
-                  {norme.icon}
+            <Animate key={index} variant="fadeUp" delay={`${index * 0.12}s`}>
+              <div className="group border border-gray-100 rounded-2xl p-8 lg:p-10 hover:border-transparent hover:shadow-lg transition-all duration-300 h-full">
+                <div className="flex items-center justify-between mb-8">
+                  <span
+                    className="text-sm font-semibold px-4 py-1.5 rounded-full"
+                    style={{ backgroundColor: norme.light, color: norme.accent }}
+                  >
+                    {norme.tag}
+                  </span>
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center"
+                    style={{ backgroundColor: norme.light, color: norme.accent }}
+                  >
+                    {norme.icon}
+                  </div>
                 </div>
-                
-                <h3 className="text-2xl font-bold text-gray-800 mb-2 text-center">
-                  {norme.title}
-                </h3>
-                
-                <p className="text-primary-600 font-semibold mb-4 text-center">
-                  {norme.subtitle}
-                </p>
-                
-                <p className="text-gray-600 leading-relaxed text-center">
-                  {norme.description}
-                </p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">{norme.title}</h3>
+                <p className="text-base font-semibold mb-4" style={{ color: norme.accent }}>{norme.subtitle}</p>
+                <p className="text-gray-700 text-base leading-[1.9]">{norme.description}</p>
+                <div
+                  className="mt-8 h-0.5 w-10 rounded-full group-hover:w-full transition-all duration-500"
+                  style={{ backgroundColor: norme.accent }}
+                />
               </div>
-            </div>
+            </Animate>
           ))}
         </div>
 
-        {/* Interconnection Section */}
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
-              L'interconnexion des normes QSE
-            </h3>
-            
-            <div className="relative">
-              <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                {/* Central Circle */}
-                <div className="w-full md:w-auto flex justify-center mb-8 md:mb-0">
-                  <div className="relative">
-                    <div className="w-48 h-48 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center shadow-2xl">
-                      <div className="text-center text-white">
-                        <p className="text-xl font-bold">Système de</p>
-                        <p className="text-xl font-bold">Management</p>
-                        <p className="text-xl font-bold">Intégré</p>
-                      </div>
-                    </div>
-                    
-                    {/* Orbiting elements for desktop */}
-                    <div className="hidden md:block">
-                      <div className="absolute -top-4 -right-4 w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                        <span className="text-sm">ISO<br/>9001</span>
-                      </div>
-                      <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-green-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                        <span className="text-sm">ISO<br/>14001</span>
-                      </div>
-                      <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-red-500 rounded-full flex items-center justify-center text-white font-bold shadow-lg">
-                        <span className="text-sm">ISO<br/>45001</span>
-                      </div>
-                    </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <Animate variant="fadeLeft">
+            <div className="bg-gray-50 rounded-2xl p-8 lg:p-10 h-full">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">L'interconnexion des normes QSE</h3>
+              <div className="flex flex-col gap-4 mb-8">
+                {[
+                  { label: "ISO 9001",  sub: "Qualité et amélioration continue",  color: "#2563EB", bg: "#EFF6FF" },
+                  { label: "ISO 14001", sub: "Environnement et prévention",        color: "#16A34A", bg: "#F0FDF4" },
+                  { label: "ISO 45001", sub: "Santé et sécurité au travail",       color: "#DC2626", bg: "#FEF2F2" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border border-gray-100">
+                    <span className="text-sm font-bold px-3 py-1 rounded-lg whitespace-nowrap" style={{ backgroundColor: item.bg, color: item.color }}>
+                      {item.label}
+                    </span>
+                    <span className="text-base text-gray-600">{item.sub}</span>
                   </div>
+                ))}
+                <div className="flex items-center justify-center my-1">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M10 3v11M10 14l-4-4M10 14l4-4" stroke="#9CA3AF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
                 </div>
-
-                {/* Mobile view - stacked */}
-                <div className="md:hidden flex flex-col gap-4 w-full">
-                  <div className="flex items-center gap-4 bg-blue-50 p-4 rounded-lg">
-                    <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
-                      <span className="text-xs">ISO<br/>9001</span>
-                    </div>
-                    <p className="text-sm text-gray-700">Qualité et amélioration continue</p>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 bg-green-50 p-4 rounded-lg">
-                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
-                      <span className="text-xs">ISO<br/>14001</span>
-                    </div>
-                    <p className="text-sm text-gray-700">Environnement et prévention</p>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 bg-red-50 p-4 rounded-lg">
-                    <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
-                      <span className="text-xs">ISO<br/>45001</span>
-                    </div>
-                    <p className="text-sm text-gray-700">Santé et sécurité au travail</p>
-                  </div>
+                <div className="flex items-center justify-center bg-blue-600 text-white rounded-xl px-5 py-4">
+                  <span className="text-base font-semibold">Système de Management Intégré (SMI)</span>
                 </div>
               </div>
-              
-              <p className="text-gray-600 text-center mt-8 leading-relaxed">
-                Les normes ISO 9001, 14001 et 45001 ne sont pas isolées. Elles convergent pour créer 
+              <p className="text-base text-gray-700 leading-[1.9]">
+                Les normes ISO 9001, 14001 et 45001 ne sont pas isolées. Elles convergent pour créer
                 un système de management QSE unifié et cohérent.
               </p>
             </div>
-          </div>
+          </Animate>
 
-          {/* SMI Section */}
-          <div className="mt-12 bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-white shadow-xl">
-            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-              Qu'est-ce qu'un Système de Management Intégré QSE (SMI) ?
-            </h3>
-            
-            <p className="text-lg leading-relaxed mb-6 text-center max-w-3xl mx-auto">
-              Un Système de Management Intégré (SMI) QSE fusionne harmonieusement les exigences 
-              qualité, sécurité et environnement. Cette approche globale permet d'optimiser les 
-              processus, de réduire les coûts et d'améliorer la coordination interne de votre entreprise.
-            </p>
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 max-w-2xl mx-auto">
-              <p className="text-lg italic text-center">
-                "Par exemple, une entreprise industrielle a pu réduire ses incidents de 30 % et 
-                diminuer ses déchets grâce à la mise en œuvre de notre SMI."
-              </p>
+          <Animate variant="fadeRight" delay="0.1s">
+            <div className="bg-blue-600 rounded-2xl p-8 lg:p-10 flex flex-col justify-between h-full">
+              <div>
+                <span className="text-sm font-semibold tracking-widest text-blue-200 uppercase">SMI</span>
+                <h3 className="text-2xl font-bold text-white mt-3 mb-6">
+                  Qu'est-ce qu'un Système de Management Intégré QSE (SMI) ?
+                </h3>
+                <p className="text-white text-base leading-[1.9] mb-8">
+                  Un Système de Management Intégré (SMI) QSE fusionne harmonieusement les exigences
+                  qualité, sécurité et environnement. Cette approche globale permet d'optimiser les
+                  processus, de réduire les coûts et d'améliorer la coordination interne de votre entreprise.
+                </p>
+              </div>
+              <div className="border-l-2 border-blue-300 pl-5">
+                <p className="text-white text-base italic leading-[1.9]">
+                  "Par exemple, une entreprise industrielle a pu réduire ses incidents de 30 % et
+                  diminuer ses déchets grâce à la mise en œuvre de notre SMI."
+                </p>
+              </div>
             </div>
-          </div>
+          </Animate>
         </div>
+
       </div>
     </section>
   );

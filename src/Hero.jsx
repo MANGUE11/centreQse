@@ -1,4 +1,3 @@
-import React from 'react';
 import { FiArrowRight } from 'react-icons/fi';
 
 const Hero = () => {
@@ -10,37 +9,49 @@ const Hero = () => {
   };
 
   return (
-    <section 
-      id="accueil" 
-      className="pt-32 pb-20 md:pt-40 md:pb-28 bg-gradient-to-br from-blue-50 via-white to-blue-100 relative overflow-hidden"
+    <section
+      id="accueil"
+      className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center top',
+        backgroundAttachment: 'fixed',
+      }}
     >
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-      
+      {/* Dark overlay with blue tint */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-950/90 via-gray-900/85 to-blue-900/80" />
+
+      {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-5xl mx-auto text-center animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+        <div className="max-w-5xl mx-auto text-center">
+
+          {/* Badge */}
+          <span className="hero-badge inline-block text-xs font-semibold tracking-widest text-blue-300 uppercase mb-6 border border-blue-400/30 px-4 py-1.5 rounded-full">
+            Expert QSE certifié ISO 9001 · 14001 · 45001
+          </span>
+
+          <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
             Centre de Consultation pour la Mise en œuvre de Normes{' '}
-            <span className="text-primary-600">
+            <span className="text-blue-400">
               Qualité, Sécurité et Environnementale (QSE)
             </span>
           </h1>
-          
-          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Votre partenaire expert pour exceller en Qualité, Sécurité et Environnement. 
+
+          <p className="hero-subtitle text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+            Votre partenaire expert pour exceller en Qualité, Sécurité et Environnement.
             Nous transformons les défis réglementaires en opportunités stratégiques pour votre entreprise.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button 
+
+          <div className="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button
               onClick={() => scrollToSection('contact')}
               className="btn-primary flex items-center gap-2 group"
             >
               Contactez-nous
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </button>
-            <button 
+            <button
               onClick={() => scrollToSection('services')}
               className="btn-secondary"
             >
@@ -49,35 +60,30 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Visual illustration */}
-        <div className="mt-16 max-w-4xl mx-auto">
-          <div className="relative">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl">
-                  <div className="w-16 h-16 bg-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-2xl font-bold">Q</span>
+        {/* QSE Cards */}
+        <div className="hero-cards mt-16 max-w-3xl mx-auto">
+          <div className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 md:p-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { letter: 'Q', label: 'Qualité', iso: 'ISO 9001', color: '#2563EB', bg: 'rgba(37,99,235,0.15)' },
+                { letter: 'S', label: 'Sécurité', iso: 'ISO 45001', color: '#DC2626', bg: 'rgba(220,38,38,0.15)' },
+                { letter: 'E', label: 'Environnement', iso: 'ISO 14001', color: '#16A34A', bg: 'rgba(22,163,74,0.15)' },
+              ].map((item) => (
+                <div
+                  key={item.letter}
+                  className="text-center p-5 rounded-xl border border-white/10 hover:border-white/25 transition-colors duration-300"
+                  style={{ backgroundColor: item.bg }}
+                >
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3"
+                    style={{ backgroundColor: item.color }}
+                  >
+                    <span className="text-white text-2xl font-bold">{item.letter}</span>
                   </div>
-                  <h3 className="font-semibold text-gray-800">Qualité</h3>
-                  <p className="text-sm text-gray-600 mt-2">ISO 9001</p>
+                  <h3 className="font-semibold text-white">{item.label}</h3>
+                  <p className="text-sm text-gray-400 mt-1">{item.iso}</p>
                 </div>
-                
-                <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-xl">
-                  <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-2xl font-bold">S</span>
-                  </div>
-                  <h3 className="font-semibold text-gray-800">Sécurité</h3>
-                  <p className="text-sm text-gray-600 mt-2">ISO 45001</p>
-                </div>
-                
-                <div className="text-center p-4 bg-gradient-to-br from-teal-50 to-teal-100 rounded-xl">
-                  <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-2xl font-bold">E</span>
-                  </div>
-                  <h3 className="font-semibold text-gray-800">Environnement</h3>
-                  <p className="text-sm text-gray-600 mt-2">ISO 14001</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
