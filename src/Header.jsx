@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 
 const Header = () => {
@@ -23,10 +23,10 @@ const Header = () => {
 
   const menuItems = [
     { id: 'accueil', label: 'Accueil' },
+    { id: 'apropos', label: 'À propos' },
     { id: 'importance', label: 'Importance QSE' },
     { id: 'normes', label: 'Normes ISO' },
     { id: 'services', label: 'Nos Services' },
-    { id: 'temoignage', label: 'Témoignage' },
     { id: 'contact', label: 'Contact' },
   ];
 

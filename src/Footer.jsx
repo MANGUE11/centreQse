@@ -10,10 +10,10 @@ const Footer = () => {
 
   const quickLinks = [
     { id: 'accueil', label: 'Accueil' },
+    { id: 'apropos', label: 'À propos' },
     { id: 'importance', label: 'Importance QSE' },
     { id: 'normes', label: 'Normes ISO' },
     { id: 'services', label: 'Nos Services' },
-    { id: 'temoignage', label: 'Témoignage' },
     { id: 'contact', label: 'Contact' },
   ];
 
